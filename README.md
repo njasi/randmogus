@@ -52,8 +52,8 @@ async function generate_amogus(output_path, options = {});
  * @param {double} options.bottom       probability of including the accsssory, default 1
  * @param {double} options.colorspin    the degree range the base color will be spun (0, colorspin]
  *                                      base color is the light green amogus, default 360
- * @param {arr} options.bright_min      minimum of the brightness adj range, default -1
- * @param {arr} options.bright_max      maximum of the brightness adj range, default 0
+ * @param {int} options.bright_min      minimum of the brightness adj range, default -1
+ * @param {int} options.bright_max      maximum of the brightness adj range, default 0
  * @param {int} options.seed            seed for random
  */
 async function generate_random_amogus(path, options = {});
