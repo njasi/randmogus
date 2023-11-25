@@ -6,7 +6,7 @@
  * I just wanted a simple seedable rng so here this is
  */
 
-let base = 0; // ideally a random starting number
+let base = Math.floor(Math.random() * 0x7fffffff); // a "random" starting number
 
 /**
  * Set the seed for the generator

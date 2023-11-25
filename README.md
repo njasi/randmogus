@@ -4,6 +4,11 @@ A garbage package I wrote to generate random amogus characters. Using it for ano
 
 Wouldn't reccomend using this, but if you do and want to add resources just make a pr.
 
+## Examples
+
+<img src="./tmp/test.png" alt="example amogus" style="width:200px;"/>
+<img src="./tmp/test2.png" alt="example amogus" style="width:200px;"/>
+
 ## Installation
 
 Unfortunately for us all, this is a package published in the npm registry:
@@ -11,6 +16,16 @@ Unfortunately for us all, this is a package published in the npm registry:
 ```
 npm i randmogus
 ```
+
+npm still doesn't include override warnings (pls just add print statement), so here's ur override warning:
+
+```json
+"overrides": {
+  "xml2js": "^0.5.0"
+},
+```
+
+Include this to in your package.json to fix the `7 moderate severity vulnerabilities` that come with the old xml2js versions.
 
 ## Usage
 
@@ -66,6 +81,3 @@ async function generate_amogus(output_path, options = {});
  */
 async function generate_random_amogus(path, options = {});
 ```
-
-## Example
-<img src="./tmp/test.png" alt="example amogus with seed 42" style="width:200px;"/>
