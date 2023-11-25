@@ -4,6 +4,14 @@ A garbage package I wrote to generate random amogus characters. Using it for ano
 
 Wouldn't reccomend using this, but if you do and want to add resources just make a pr.
 
+## Installation
+
+Unfortunately for us all, this is a package published in the npm registry:
+
+```
+npm i randmogus
+```
+
 ## Usage
 
 ```js
@@ -45,7 +53,7 @@ async function generate_amogus(output_path, options = {});
 /**
  * Generate a random amogus
  * @param {string} path                 Where to save the generated image
- * @param {any} options              options object
+ * @param {any} options                 options object
  * @param {double} options.hat          probability of including the accsssory, default 1
  * @param {double} options.backpack     probability of including the accsssory, default 1
  * @param {double} options.pet          probability of including the accsssory, default 1
