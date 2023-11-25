@@ -1,6 +1,6 @@
 {
   "name": "randmogus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Garbage module to generate random among us characters",
   "main": "src/index.js",
   "scripts": {
@@ -29,6 +29,9 @@
     "among us drip",
     "drip",
     "when the imposter is sus",
-    "when the impostor is sus"
+    "when the impostor is sus",
+    "emergency meeting",
+    "eject",
+    "random"
   ]
 }

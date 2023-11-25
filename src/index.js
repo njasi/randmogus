@@ -16,7 +16,7 @@ const { random, seed } = require("./mulrandom");
 function probe_directory(dirpath) {
   const map = {};
   let count = 0;
-  const files = fs.readdirSync(dirpath);
+  const files = fs.readdirSync(path.join(__dirname, "../", dirpath));
 
   // sort numerically
   files.sort(function (a, b) {
@@ -27,7 +27,7 @@ function probe_directory(dirpath) {
   files.forEach(async (file) => {
     if (file.indexOf(".png") !== -1) {
       count++;
-      map[count] = path.join(dirpath, file);
+      map[count] = path.join(__dirname, "../", dirpath, file);
     }
   });
 
@@ -41,8 +41,12 @@ const [BOTTOMS_COUNT, BOTTOMS_MAP] = probe_directory("resources/bottoms");
 const [PETS_COUNT, PETS_MAP] = probe_directory("resources/pets");
 
 // base images
-const BASE_AMOGUS = "../resources/characters/green.png";
-const OUTLINE = "../resources/characters/outline.png";
+const BASE_AMOGUS = path.join(
+  __dirname,
+  "../",
+  "resources/characters/green.png"
+);
+const OUTLINE = path.join(__dirname, "../", "resources/characters/outline.png");
 
 /**
  * Generate an amogus img with the requested resources
@@ -59,21 +63,21 @@ async function generate_amogus(output_path, options = {}) {
   const accessories = [];
 
   if (options.bottom > 0) {
-    accessories.push("../" + BOTTOMS_MAP[options.bottom]);
+    accessories.push(BOTTOMS_MAP[options.bottom]);
   }
   if (options.backpack > 0) {
-    accessories.push("../" + BACKPACKS_MAP[options.backpack]);
+    accessories.push(BACKPACKS_MAP[options.backpack]);
   }
   if (options.hat > 0) {
-    accessories.push("../" + HATS_MAP[options.hat]);
+    accessories.push(HATS_MAP[options.hat]);
   }
   if (options.pet > 0) {
-    accessories.push("../" + PETS_MAP[options.pet]);
+    accessories.push(PETS_MAP[options.pet]);
   }
 
   // load static images
-  let base = await jimp.read(path.join(__dirname, BASE_AMOGUS));
-  let outline = await jimp.read(path.join(__dirname, OUTLINE));
+  let base = await jimp.read(BASE_AMOGUS);
+  let outline = await jimp.read(OUTLINE);
 
   // color spin and brightness adj the base
   base = await base.color([{ apply: "spin", params: [options.color] }]);
@@ -89,7 +93,7 @@ async function generate_amogus(output_path, options = {}) {
 
   // now go through all the accessories
   for (let i = 0; i < accessories.length; i++) {
-    const accessory = await jimp.read(path.join(__dirname, accessories[i]));
+    const accessory = await jimp.read(accessories[i]);
     await base.composite(accessory, 0, 0, {
       mode: jimp.BLEND_SOURCE_OVER,
       opacityDest: 1,
@@ -174,7 +178,7 @@ if (require.main === module) {
       hat: 0.7,
       backpack: 0.7,
       pet: 0.5,
-      bottom: 0.5,
+      bottom: 1,
       seed: seed,
     });
   })();
