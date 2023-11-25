@@ -15,7 +15,7 @@ randmogus.generate_random_amogus("output", {
   backpack: 0.7,
   pet: 0.5,
   bottom: 0.5,
-  seed: seed,
+  seed: 42,
 });
 ```
 
