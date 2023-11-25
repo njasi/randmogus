@@ -32,7 +32,7 @@ dont want to write actual docs for this joke so heres the function signatures:
 ```js
 /**
  * Generate an amogus img with the requested resources
- * @param {Object} options
+ * @param {any} options                 options object
  * @param {int} options.hat             id of hat or -1 for none
  * @param {int} options.backpack        id of backpack or -1 for none
  * @param {int} options.pet             id of pet or -1 for none
@@ -44,8 +44,8 @@ async function generate_amogus(output_path, options = {});
 
 /**
  * Generate a random amogus
- * @param {String} path                 Where to save the generated image
- * @param {Object} options              options object
+ * @param {string} path                 Where to save the generated image
+ * @param {any} options              options object
  * @param {double} options.hat          probability of including the accsssory, default 1
  * @param {double} options.backpack     probability of including the accsssory, default 1
  * @param {double} options.pet          probability of including the accsssory, default 1
