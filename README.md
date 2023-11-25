@@ -9,7 +9,7 @@ Wouldn't reccomend using this, but if you do and want to add resources just make
 ```js
 const randmogus = require("randmogus");
 
-randmogus.generate_random_amogus("output", {
+randmogus.generate_random_amogus("output.png", {
   // probability to include the accessory type, see "docs"
   hat: 0.7,
   backpack: 0.7,
