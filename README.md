@@ -66,3 +66,6 @@ async function generate_amogus(output_path, options = {});
  */
 async function generate_random_amogus(path, options = {});
 ```
+
+## Example
+<img src="./tmp/test.png" alt="example amogus with seed 42" style="width:200px;"/>
